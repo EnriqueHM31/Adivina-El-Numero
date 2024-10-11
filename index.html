@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Mi logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego de Adivinanza</title>
+</head>
+
+<body>
+
+
+    <nav class="navegacion">
+        <img src="img/Mi logo.webp" class="logo" alt="Mi logo">
+
+        <a href="https://github.com/EnriqueHM31" class="link_git">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </nav>
+
+    <div class="contenedor_juego">
+
+        <button class="reinicio" id="reiniciar">Reiniciar</button>
+
+        <div class="juego">
+            
+            <h1 class="title_juego">Juego de Adivinanza</h1>
+            <hr>
+            <p class="descripcion_juego">Adivina un numero entre el 1 y 100</p>
+
+            <div class="contenido_juego">
+
+                <input type="number" name="numeros" id="numero_usuario" class="respuesta">
+
+                <button class="resultado" id="verificar">Verificar</button>
+
+            </div>
+
+            <p class="resultados" id="descripcion">Iniciemos &#9996;</p>
+
+        </div>
+
+
+        <div class="intentos">
+
+            <p class="descripcion_intentos">Numeros de intentos:</p>
+
+            <span id="intentos" class="mostrar_intentos">0</span>
+
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

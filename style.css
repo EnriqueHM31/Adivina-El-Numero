@@ -1,0 +1,241 @@
+:root {
+    --fondo: #000;
+    --letra: #fff;
+    --hover: #48d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: url(img/fondo.webp), no-repeat, center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+h1 {
+    font-family: monospace, sans-serif;
+}
+
+span,
+p,
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ESTILO DE LA NAVEGACION*/
+.navegacion {
+    background-color: var(--fondo);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    max-width: 20rem;
+}
+
+.link_git {
+    font-size: 4rem;
+    padding: 1rem;
+    color: var(--letra);
+    transition: 1s;
+}
+
+.link_git:hover {
+    color: var(--hover);
+    filter: drop-shadow(0 0 1rem var(--hover));
+}
+
+/*ESTILO DEL CONTENEDOR DEL JUEGO*/
+.contenedor_juego {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    min-width: 90%;
+    margin-top: 5rem;
+}
+
+/*ESTILO DEL BOTON DE REINICIO JUEGO*/
+.reinicio{
+    font-size: clamp(1.6rem, 5vw, 4rem);
+    padding: 2.5rem 2rem;
+    background-color: var(--fondo);
+    color: var(--letra);
+    border-radius: 2rem;
+    border: .1rem solid var(--letra);
+    writing-mode: vertical-lr;
+    rotate: 180deg;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.reinicio:hover{
+    background-color: var(--hover);
+    color: var(--letra);
+}
+
+/*ESTILO DE LOS COMPONENTES DEL ELEMENTO JUEGO*/
+.juego {
+    width: 60%;
+    background: linear-gradient(90deg, #000a, #011b28);
+    border-radius: 2rem;
+    border: .1rem solid var(--letra);
+    box-shadow: 0 0 2rem var(--letra), 0 0 2rem var(--hover);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: var(--letra);
+}
+
+.title_juego {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+}
+
+.juego hr {
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.descripcion_juego {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+}
+
+.contenido_juego {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.respuesta {
+    width: 0;
+    flex-grow: 3;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    padding: .5rem;
+    text-align: center;
+}
+
+.resultado {
+    width: 0;
+    flex-grow: 1;
+    font-size: clamp(1.1rem, 5vw, 2.5rem);
+    border-radius: 1rem;
+    background-color: var(--hover);
+    cursor: pointer;
+    color: var(--letra);
+    transition: 1s;
+}
+
+.resultado:hover {
+    background-color: var(--letra);
+    color: var(--hover);
+}
+
+.resultados{
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-top: 1rem;
+}
+
+/*ESTILO DEL ELEMENTO INTENTOS*/
+.intentos {
+    width: 30%;
+    min-height: 35dvh;
+    border-radius: 2rem;
+    border: .1rem solid var(--letra);
+    background: linear-gradient(270deg, #000a, rgb(14, 40, 73));
+    box-shadow: 0 0 2rem var(--hover);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: var(--letra);
+}
+
+.descripcion_intentos {
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    width: 100%;
+    background-color: var(--fondo);
+    text-align: center;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.mostrar_intentos {
+    font-size: clamp(3rem, 5vw, 6rem);
+}
+
+/*ADAPTACION A CELULARES*/
+@media (max-width:800px){
+
+    body{
+        height: max-content;
+    }
+
+    .reinicio{
+        padding: .5rem 1rem;
+    }
+
+    .title_juego{
+        text-align: center;
+    }
+
+    .contenedor_juego{
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .reinicio{
+        writing-mode: horizontal-tb;
+        rotate: none;
+    }
+
+    .juego{
+        width: 90%;
+        padding: 1rem;
+
+        & .descripcion_juego{
+            text-align: center;
+        }
+
+        & .resultados{
+            text-align: center;
+        }
+    }
+
+    .contenido_juego{
+        flex-direction: column;
+
+        & .respuesta, .resultado{
+            width: 100%;
+        }
+        & .resultado{
+            padding: 2rem 1rem;
+        }
+    }
+
+    .intentos{
+        width: 70%;
+        min-height: 20dvh;
+
+        & .descripcion_intentos{
+            padding: 2rem 1rem;
+        }
+    }
+}
